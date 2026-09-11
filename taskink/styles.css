@@ -1,0 +1,85 @@
+/* TaskInk専用の追加スタイル。共通の ../styles.css を先に読み込んだうえで
+   このファイルを読み込む前提(taskink/index.html参照)。電子ペーパーらしい、
+   白・黒・グレー中心の落ち着いた雰囲気にするため、アクセントカラーを
+   無彩色に上書きするだけにとどめ、共通デザインの雰囲気は踏襲する。 */
+
+:root {
+  --color-accent: #1d1d1f;
+}
+
+.taskink-hero {
+  text-align: center;
+  padding: 96px 24px 56px;
+  border-top: none;
+}
+
+.taskink-hero .tagline {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.taskink-hero .lead {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* 実機の電子ペーパー端末を模した簡単な枠(EpaperDeviceGraphic相当の
+   雰囲気)。画像ではなくCSSのみで表現している。 */
+.taskink-mock {
+  width: 220px;
+  margin: 48px auto 0;
+  background: #ffffff;
+  border: 2px solid var(--color-text);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: left;
+}
+
+.taskink-mock .line {
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.taskink-mock .line:last-child {
+  margin-bottom: 0;
+}
+
+.taskink-mock .line.short {
+  width: 55%;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 16px;
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+.feature-list .mark {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text);
+  margin-top: 9px;
+}
