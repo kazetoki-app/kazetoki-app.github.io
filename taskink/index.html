@@ -17,33 +17,75 @@
 
 <main>
   <section class="taskink-hero">
-    <p class="tagline">やることを、机の上に。</p>
-    <p class="lead">
-      TaskInkは、電子ペーパーに表示するタスク一覧画像を、スマートフォンで作成するアプリです。
-      一般的なタスク管理アプリとしてではなく、電子ペーパーに表示する内容を作成・管理するためのアプリとして作っています。
-    </p>
+    <h1>スマホのTODOを机の上に。</h1>
+    <div class="taskink-badge">
+      <span class="icon">☑</span>
+      <span>TaskInk</span>
+    </div>
+    <!-- 仮のモックアップ。実物の電子ペーパーが360度回転する動画に
+         差し替え予定。 -->
     <div class="taskink-mock" aria-hidden="true">
-      <div class="line"></div>
-      <div class="line short"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line short"></div>
+      <div class="mock-title">今月の目標<br>机の上から、習慣を変える。</div>
+      <div class="mock-row"><span class="date">11/03</span><span>企画書を作成する</span></div>
+      <div class="mock-row"><span class="date">11/13</span><span>資料を確認する</span></div>
+      <div class="mock-row"><span class="date">11/24</span><span>会議の準備</span></div>
+      <div class="mock-row"><span class="date">11/27</span><span>デザインを修正する</span></div>
     </div>
   </section>
 
-  <section>
-    <h2>できること</h2>
-    <ul class="feature-list">
-      <li><span class="mark"></span><span>電子ペーパーに表示するタスク一覧を作成</span></li>
-      <li><span class="mark"></span><span>締切の設定</span></li>
-      <li><span class="mark"></span><span>重要度の設定</span></li>
-      <li><span class="mark"></span><span>並べ替え</span></li>
-      <li><span class="mark"></span><span>複数のタスクリスト</span></li>
-      <li><span class="mark"></span><span>目標や心がけなどを固定表示</span></li>
-      <li><span class="mark"></span><span>対応する電子ペーパー端末へBluetoothで直接送信</span></li>
-      <li><span class="mark"></span><span>作成したタスク一覧を画像として保存</span></li>
-      <li><span class="mark"></span><span>保存した画像は、お持ちの市販の電子ペーパーでも活用可能</span></li>
-    </ul>
+  <!-- 「できること」の紹介。今は2つだが、今後増やす予定
+       (同じ.feature-story構造を追加していけばよい)。
+       画像部分は仮のCSSモックアップで、実物の写真や動画に差し替え予定。 -->
+  <section class="feature-story">
+    <div class="feature-story-heading">
+      <span class="section-num">01</span>
+      <h2>スマホから電子ペーパーへ。</h2>
+    </div>
+    <div class="device-combo-mock" aria-hidden="true">
+      <div class="phone-mock">
+        <div class="mini-line dark"></div>
+        <div class="mini-line short"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line short"></div>
+      </div>
+      <div class="epaper-mock">
+        <div class="mini-line dark"></div>
+        <div class="mini-line short"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line"></div>
+      </div>
+    </div>
+    <p class="feature-story-caption">
+      対応する電子ペーパー端末へ、Bluetoothで簡単送信。<br>
+      ふせんいっぱいのデスクに、さようなら。
+    </p>
+  </section>
+
+  <section class="feature-story">
+    <div class="feature-story-heading">
+      <span class="section-num">02</span>
+      <h2>いつもの電子ペーパーにも。</h2>
+    </div>
+    <div class="device-combo-mock alt" aria-hidden="true">
+      <div class="phone-mock">
+        <div class="mini-line dark"></div>
+        <div class="mini-line short"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line short"></div>
+      </div>
+      <div class="epaper-mock">
+        <div class="mini-line dark"></div>
+        <div class="mini-line short"></div>
+        <div class="mini-line"></div>
+        <div class="mini-line"></div>
+      </div>
+    </div>
+    <p class="feature-story-caption">
+      タスク一覧は画像として保存することも。お持ちの電子ペーパーでも活用できます。<br>
+      ※送信には各電子ペーパーのアプリ等が必要です。
+    </p>
   </section>
 
   <section class="doc">

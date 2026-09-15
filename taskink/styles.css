@@ -1,7 +1,11 @@
 /* TaskInk専用の追加スタイル。共通の ../styles.css を先に読み込んだうえで
    このファイルを読み込む前提(taskink/index.html参照)。電子ペーパーらしい、
    白・黒・グレー中心の落ち着いた雰囲気にするため、アクセントカラーを
-   無彩色に上書きするだけにとどめ、共通デザインの雰囲気は踏襲する。 */
+   無彩色に上書きするだけにとどめ、共通デザインの雰囲気は踏襲する。
+
+   ここにある電子ペーパー/スマホの図解はすべてCSSだけで組んだ仮のもの。
+   実物の写真やBlenderで作成予定の回転動画に差し替える前提の、
+   レイアウト確認用プレースホルダー。 */
 
 :root {
   --color-accent: #1d1d1f;
@@ -9,77 +13,171 @@
 
 .taskink-hero {
   text-align: center;
-  padding: 96px 24px 56px;
+  padding: 88px 24px 64px;
   border-top: none;
 }
 
-.taskink-hero .tagline {
+.taskink-hero h1 {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 20px;
+  text-wrap: balance;
 }
 
-.taskink-hero .lead {
-  font-size: 17px;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  max-width: 520px;
-  margin: 0 auto;
+/* 見出し直下の「☑ TaskInk」バッジ。 */
+.taskink-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1.5px solid var(--color-text);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
 }
 
-/* 実機の電子ペーパー端末を模した簡単な枠(EpaperDeviceGraphic相当の
-   雰囲気)。画像ではなくCSSのみで表現している。 */
+.taskink-badge .icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* トップの電子ペーパー本体モックアップ。 */
 .taskink-mock {
-  width: 220px;
+  width: 260px;
   margin: 48px auto 0;
   background: #ffffff;
   border: 2px solid var(--color-text);
   border-radius: 6px;
-  padding: 20px;
+  padding: 16px;
   text-align: left;
 }
 
-.taskink-mock .line {
-  height: 8px;
+.taskink-mock .mock-title {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1.5px solid var(--color-text);
+}
+
+.taskink-mock .mock-row {
+  display: flex;
+  gap: 10px;
+  font-size: 10.5px;
+  padding: 5px 0;
+  color: var(--color-text-secondary);
+}
+
+.taskink-mock .mock-row .date {
+  flex-shrink: 0;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 「01」「02」…の数字リボン。右端がへこんだ旗のような形。 */
+.feature-story {
+  padding: 64px 24px;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.feature-story-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.section-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  background: var(--color-text);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  clip-path: polygon(0 0, 72% 0, 100% 50%, 72% 100%, 0 100%);
+  padding-right: 6px;
+}
+
+.feature-story h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-align: left;
+  text-wrap: balance;
+}
+
+/* スマホ+電子ペーパーの組み合わせモックアップ。実物の写真/動画に
+   差し替える前提の仮組み。 */
+.device-combo-mock {
+  position: relative;
+  width: 260px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.device-combo-mock .phone-mock,
+.device-combo-mock .epaper-mock {
+  position: absolute;
+  background: #ffffff;
+  text-align: left;
+}
+
+.device-combo-mock .phone-mock {
+  top: 0;
+  right: 10px;
+  width: 130px;
+  height: 200px;
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  padding: 14px 10px;
+}
+
+.device-combo-mock .epaper-mock {
+  bottom: 0;
+  left: 10px;
+  width: 170px;
+  height: 130px;
+  border: 2px solid var(--color-text);
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* 02セクション: 「お手持ちの(自社製ではない)電子ペーパー」を示すため、
+   枠線を少し濃く・角ばらせて雰囲気を変えている(仮の表現)。 */
+.device-combo-mock.alt .epaper-mock {
+  border-radius: 2px;
+  border-color: #000000;
+}
+
+.device-combo-mock .mini-line {
+  height: 5px;
   background: var(--color-border);
   border-radius: 2px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
-.taskink-mock .line:last-child {
-  margin-bottom: 0;
-}
-
-.taskink-mock .line.short {
-  width: 55%;
-}
-
-.feature-list {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 640px;
-}
-
-.feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 4px;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 16px;
-}
-
-.feature-list li:last-child {
-  border-bottom: none;
-}
-
-.feature-list .mark {
-  flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+.device-combo-mock .mini-line.dark {
   background: var(--color-text);
-  margin-top: 9px;
+}
+
+.device-combo-mock .mini-line.short {
+  width: 60%;
+}
+
+.feature-story-caption {
+  margin: 32px auto 0;
+  max-width: 420px;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--color-text-secondary);
 }
